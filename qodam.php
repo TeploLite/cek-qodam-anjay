@@ -1,34 +1,24 @@
 
 <?php
 // Daftar nama-nama khodam
-$qodamNames = [
-    "Air Cucian Beras",
-    "Api Menyala",
-    "Angin Sejuk",
-    "Batu Karang",
-    "Cahaya Bulan",
-    "Daun Rimbun",
-    "Embun Pagi",
-    "Gurun Pasir",
-    "Hujan Deras",
-    "Pelangi Indah",
-    "Sungai Mengalir",
-    "Tanah Subur",
-    "Sepeda Ontel",
-    "Titid Terbang",
-    "Layangan Putus",
-    "Baju Robek",
-    "Buaya Putih",
-    "Kuntilanak merah",
-    "Pocong Bambu",
-    "Tuyul emas",
+$qodamNames = array(
+    ("farahan kebab"),
+    ("mas fais"),
+    ("kicau mania"),
+    // array("images"=>"img/ngawi3.jpeg",
+    // "kodam"=>"kicau mania"),
     // Tambahkan nama-nama khodam lainnya sesuai kebutuhan
-];
-
+);
+$items=array("img/ngawi1.jpeg","img/ngawi2.jpeg","img/ngawi3.jpeg");
 // Fungsi untuk mengembalikan nama khodam secara acak
-function getRandomqodam() {
+function getRandomQodam() {
     global $qodamNames;
     $randomIndex = array_rand($qodamNames);
     return $qodamNames[$randomIndex];
+}
+function getRandomItem() {
+    global $items;
+    $randomImages = array_rand($items);
+    return $items[$randomImages];
 }
 ?>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="images/logo.png" />
+    <link rel="icon" type="image/x-icon" href="img/icon.jpeg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <title>Check Khodam</title>
     <style>
@@ -62,7 +62,7 @@
     <div class="container">
         <h2>Cek Khodam Gratis</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <label for="inputName">Nama:</label>
+            <label for="inputName">Masukan Nama Anda:</label>
             <input type="text" id="inputName" name="inputName" required>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -70,12 +70,13 @@
             <button type="button"  data-bs-toggle="modal" data-bs-target="#detailModal">Cek khodam</button>
         </form>
         <?php
-            // Sisipkan file logika PHP
+            // // Sisipkan file logika PHP
             require_once 'qodam.php';
             // Proses input dan tampilkan hasil jika form disubmit
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $inputName = isset($_POST['inputName']) ? htmlspecialchars($_POST['inputName']) : '';
                 $khodamName = getRandomQodam();
+                $items = getRandomItem();
             }
             ?>
         <div class="modal fade" id="detailModal" tabindex="-1">
@@ -87,7 +88,7 @@
             </div>
     <div class="modal-body row justify-content-center align-items-center" >
         <div class="card " style="width: 18rem;">
-            <img src="img/cek.png" class="card-img-top" alt="...">
+            <?php echo '<img src="' . $items . '";'?>
             <div class="card-body">
             <h5 class="card-title"><?php echo $khodamName; ?></h5>
             <p class="card-text">Lorem ipsum dolor sit amet, non ducimus doloremque sequi dolorum. Fugiat quidem soluta veniam vitae mollitia dolorum!</p>
@@ -96,7 +97,7 @@
         <div class="result">
             <?php
             echo "<p><strong>Nama:</strong> $inputName</p>";
-            echo "<p><strong>Khodam:</strong> $khodamName</p>";?>
+            echo "<p><strong>Khodam:</strong>$khodamName</p>";?>
         </div>
       </div>
       <div class="modal-footer">
