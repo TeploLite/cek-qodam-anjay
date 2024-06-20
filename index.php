@@ -80,7 +80,6 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $inputName = isset($_POST['inputName']) ? htmlspecialchars($_POST['inputName']) : '';
                 $khodamName = getRandomQodam();
-                $items = getRandomItem();
             }
             ?>
         <div class="modal fade" id="detailModal" tabindex="-1">
@@ -92,17 +91,18 @@
             </div>
     <div class="modal-body row justify-content-center align-items-center" >
         <div class="card " style="width: 18rem;">
-            <?php echo '<img src="' . $items . '";'?>
+            <?php echo '<img src="' . $khodamName['img'] . '"alt="Image";'?>
             <div class="card-body">
-            <h5 class="card-title"><?php echo $khodamName; ?></h5>
+            <h5 class="card-title"><?php echo  $khodamName['kodam']  ; ?></h5>
             <p class="card-text">Lorem ipsum dolor sit amet, non ducimus doloremque sequi dolorum. Fugiat quidem soluta veniam vitae mollitia dolorum!</p>
         </div>
     </div>
         <div class="result">
             <?php
             echo "<p><strong>Nama:</strong> $inputName</p>";
-            echo "<p><strong>Khodam:</strong>$khodamName</p>";?>
+            echo  "<p><strong>Khodam:</strong> {$khodamName['kodam']}</p>";?>
         </div>
+        <br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kembali</button>
