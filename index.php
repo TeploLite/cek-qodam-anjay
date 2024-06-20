@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="img/icon.jpeg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <title>Check Khodam</title>
+    <title>Cek Khodam</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,10 +17,10 @@
             background: linear-gradient(160deg, #2b07f7, #f30909);
         }
         .container {
-            background-color: #f0f0f0;
+            background-color: rgba(147, 148, 163, 0.50);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.7);
             width: 400px;
             display: flex;
             flex-direction: row;
@@ -29,6 +29,7 @@
         }
         h2 {
             text-align: center;
+            font-size: 30px;
         }
         form {
             text-align: center;
@@ -38,12 +39,15 @@
             margin-bottom: 10px;
         }
         input[type="text"] {
-            width: 100%;
+            width: 80%;
             padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 2px solid #ccc;
+            border-radius: 100px;
             box-sizing: border-box;
             margin-bottom: 10px;
+            background-color: transparent;
+            font-size: 18px;
+            text-align:center;
         }
         button {
             padding: 10px 20px;
@@ -64,10 +68,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>Cek Khodam Gratis</h2>
+        <h2>Cek Khodam</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <label for="inputName">Masukan Nama Anda:</label>
-            <input type="text" id="inputName" name="inputName" required>
+            <label for="inputName">Masukan nama untuk mnegetahui khodam anda </label>
+            <input type="text" id="inputName" name="inputName" placeholder="Ketik nama anda di sini" required>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
             <br><br>
@@ -99,8 +103,8 @@
     </div>
         <div class="result">
             <?php
-            echo "<p><strong>Nama:</strong> $inputName</p>";
-            echo  "<p><strong>Khodam:</strong> {$khodamName['kodam']}</p>";?>
+            echo "<p>Nama <strong>$inputName </strong></p>";
+            echo  "<p>Memiliki Khodam <strong>{$khodamName['kodam']}</strong> </p>";?>
         </div>
         <br>
       </div>
