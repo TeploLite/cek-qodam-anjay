@@ -26,7 +26,6 @@ $qodamNames = array(
     array("img"=>"img/kevin.jpg","kodam"=>"Kevin Lontong"),
     array("img"=>"img/kucing sigma.jpg","kodam"=>"Kucing Sigma"),
     array("img"=>"img/laba laba.jpg","kodam"=>"Laba laba gurun sahara"),
-    array("img"=>"img/laba laba sunda.jpg","kodam"=>"Laba laba sunda"),
     array("img"=>"img/manusia silver.jpg","kodam"=>"Manusia Silver"),
     array("img"=>"img/marwoto.jpg","kodam"=>"Marwoto S.Pd"),
     array("img"=>"img/mesi.jpg","kodam"=>"El Cekik"),
